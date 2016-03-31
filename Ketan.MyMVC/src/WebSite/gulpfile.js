@@ -64,3 +64,10 @@ gulp.task('moveToLibs', function (done) {
       'node_modules/bootstrap/dist/css/bootstrap.css'
     ]).pipe(gulp.dest('./wwwroot/libs/css'));
 });
+
+gulp.task("moveToDevScript", function(done) {
+    gulp.src([
+        "node_modules/**/*.ts"
+    ])
+    .pipe(gulp.dest("./Scripts"));
+});
