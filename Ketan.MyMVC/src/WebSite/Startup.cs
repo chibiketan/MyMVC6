@@ -1,4 +1,5 @@
-﻿using System;
+﻿// http://www.mithunvp.com/angular-2-in-asp-net-5-typescript-visual-studio-2015/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
