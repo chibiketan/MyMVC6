@@ -3,11 +3,19 @@
   "version": "1.0.0-*",
   "buildOptions": {
     "emitEntryPoint": true,
-    "preserveCompilationContext": true
+    "preserveCompilationContext": true,
+    "embed": "Views/**", // Instead of ".:resource": "Views/**",
+    "compile": {
+      "exclude": [
+        "wwwroot",
+        "node_modules"
+      ] // Now here, instead of ".:exclude"
+    }
   },
 
   "runtimeOptions": {
-    "gcServer": true
+    "gcServer": true,
+    "gcConcurrent": true
   },
 
   "dependencies": {
@@ -27,6 +35,7 @@
     "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-final",
     "Microsoft.AspNetCore.Razor.Tools": "1.0.0-preview1-final",
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": "1.0.0-preview1-final",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables":  "1.0.0-rc2-final" ,
     "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final",
     "Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-final",
     "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc2-final",
@@ -82,14 +91,6 @@
     ]
   },
 
-  //"exclude": [
-  //  "wwwroot",
-  //  "node_modules"
-  //],
-  //"publishExclude": [
-  //  "**.user",
-  //  "**.vspscc"
-  //],
   "scripts": {
     "prepublish": [ "npm install", "bower install", "gulp clean", "gulp min" ]
   }

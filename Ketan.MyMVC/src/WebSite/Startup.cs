@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder.Extensions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.DotNet.Cli.Utils;
@@ -33,7 +34,7 @@ namespace WebSite
                 builder.AddUserSecrets();
             }
 
-            //builder.AddEnvironmentVariables();
+            builder.AddEnvironmentVariables();
             Configuration = builder.Build();
         }
 
